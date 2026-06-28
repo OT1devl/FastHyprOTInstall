@@ -47,7 +47,7 @@ cacheFonts () {
 }
 
 installFonts () {
-    sudo pacman -S --needed ttf-jetbrains-mono-nerd noto-fonts-emoji ttf-font-awesome ttf-material-design-icons-git
+    sudo pacman -S --needed ttf-jetbrains-mono-nerd noto-fonts-emoji ttf-font-awesome
 
     cacheFonts
 }
@@ -56,7 +56,7 @@ installFonts () {
 # BLUETOOTH
 # ---------------------------
 installBluetooth () {
-    sudo pacman -S --needed --noconfirm bluez bluez-utils
+    sudo pacman -S --needed bluez bluez-utils
     sudo systemctl enable bluetooth
 }
 
@@ -64,7 +64,7 @@ installBluetooth () {
 # DISPLAY MANAGER (optional)
 # ---------------------------
 installSDDM () {
-    sudo pacman -S --needed --noconfirm sddm
+    sudo pacman -S --needed sddm
     sudo systemctl enable sddm
 }
 
@@ -131,10 +131,11 @@ programa () {
     setupParu
     installParu
 
-    installCaelestia
     installBrowsers
-
     installGraphics
+
+    installCaelestia
+
     echo "-------------------------------------"
     echo "[DONE] System installed successfully"
     echo "-------------------------------------"
