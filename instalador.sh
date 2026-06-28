@@ -1,9 +1,7 @@
 #!/bin/sh
 
-# Instalador experimental hecho por OT
+# Experimental installer made by OT1
 # CachyOS minimal + Hyprland + Caelestia
-
-set -e
 
 cachyOSURL="cachyos.org"
 paruURL="https://aur.archlinux.org/paru.git"
@@ -36,7 +34,7 @@ systemUpdate () {
 # BASE TOOLS
 # ---------------------------
 installBaseTools () {
-    sudo pacman -S --needed git curl wget base-devel cmake make gcc perl fastfetch htop btop nvtop vim nano fish rustup
+    sudo pacman -S --needed git curl wget base-devel gcc fastfetch htop btop nvtop vim nano fish rustup
 }
 
 # ---------------------------
@@ -94,7 +92,7 @@ installParu () {
 # CAELESTIA
 # ---------------------------
 installCaelestia () {
-    paru -S caelestia
+    paru -S caelestia-cli
 
     caelestia install --disable-components firefox,spotify,vscodium,vscode,discord,todoist
 }
@@ -139,6 +137,7 @@ programa () {
     echo "-------------------------------------"
     echo "[DONE] System installed successfully"
     echo "-------------------------------------"
+    echo 
     echo "Now do sudo systemctl start sddm to start your enviroment"
 }
 
